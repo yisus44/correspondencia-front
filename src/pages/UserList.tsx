@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getUsers } from "../services/user/get-users";
 import UserTable from "../components/UserTable";
 import { getUsersInvitations } from "../services/user/get-user-invitation";
+import { Typography } from "@mui/material";
 export default function UserList() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,9 @@ export default function UserList() {
   }
   return (
     <div>
-      <h2>Panel de administrador</h2>
+      <Typography variant="h2" gutterBottom>
+        Pandel de administrador
+      </Typography>
       {loading ? (
         <p>Cargando</p>
       ) : (

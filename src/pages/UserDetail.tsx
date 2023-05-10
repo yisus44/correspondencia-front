@@ -62,6 +62,9 @@ export default function UserDetail() {
       console.error(error)
     );
   };
+  const handleReturn = () => {
+    navigate(`/`);
+  };
 
   const handleDelete = () => {
     deleteUser(user.id)
@@ -213,12 +216,15 @@ export default function UserDetail() {
             }}
           />
         </Grid>
-        <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={handleUpdate}>
+        <Grid item m={12} padding={5}>
+          <Button variant="text" color="primary" onClick={handleUpdate}>
             Actualizar
           </Button>
-          <Button variant="contained" color="secondary" onClick={handleDelete}>
+          <Button variant="text" color="secondary" onClick={handleDelete}>
             Eliminar
+          </Button>
+          <Button variant="text" color="success" onClick={handleReturn}>
+            Regresar
           </Button>
         </Grid>
       </Grid>
