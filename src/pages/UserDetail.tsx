@@ -50,6 +50,7 @@ export default function UserDetail() {
         setUser({ ...data, fechaNacimiento: new Date(data.fechaNacimiento) });
       })
       .catch((ex) => {
+        console.error(ex);
         navigate(`/`);
       })
       .finally(() => {
@@ -68,7 +69,7 @@ export default function UserDetail() {
 
   const handleDelete = () => {
     deleteUser(user.id)
-      .then((response) => {
+      .then((_) => {
         navigate(`/`);
       })
       .catch((error) => console.error(error));

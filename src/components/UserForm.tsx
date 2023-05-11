@@ -42,6 +42,12 @@ export default function UserForm() {
 
   const handleCreate = (ev: any) => {
     ev.preventDefault();
+    const emptyFields = Object.entries(user).filter(
+      ([_, value]) => value.toString() === ""
+    );
+    if (emptyFields.length > 0) {
+      return alert("please fill all the form");
+    }
     setLoading(true);
     createUser(JSON.stringify(user))
       .then(() => {
