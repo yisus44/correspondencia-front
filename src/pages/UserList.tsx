@@ -29,7 +29,7 @@ export default function UserList() {
   return (
     <div>
       <Typography variant="h2" gutterBottom>
-        Pandel de administrador
+        Panel de administrador
       </Typography>
       {loading ? (
         <p>Cargando</p>
